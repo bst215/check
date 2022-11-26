@@ -6,5 +6,10 @@ st.write("Welcome!")
 
 m_cont = st.container()
 
-with m_cont:
-   st.write("This text really is inside of a container")
+t_file = st.sidebar.file_uploader("Pick a PDF File")
+
+if (t_file != None):
+   t_contents = PdfReader(t_file)
+   num_pages = len(t_contents.ages)
+   with m_cont:
+      st.write("Number of pages in the .PDF: " + str(num_pages))
