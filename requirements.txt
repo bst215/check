@@ -4,4 +4,4 @@ opencv-python-headless
 PyPDF2
 pillow
 pymupdf
-pdf2image
+easyocr
