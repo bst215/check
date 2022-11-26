@@ -25,6 +25,7 @@ if (t_file != None):
    for page in img:
       pic = page.get_pixmap()
       st.image(pic.pil_tobytes(format="JPEG"))
-      st.write(reader.readtext(pic.pil_tobytes(format="JPEG")))
+      with m_cont:
+         st.write(reader.readtext(pic.pil_tobytes(format="JPEG")))
 
 
