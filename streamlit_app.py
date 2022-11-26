@@ -3,6 +3,7 @@ import cv2
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from datetime import datetime
+from pdf2image import convert_from_bytes
 import io
 import os
 
@@ -31,9 +32,10 @@ if (t_file != None):
       pdf_bytes = io.BytesIO()
       dst_pdf.write(pdf_bytes)
       pdf_bytes.seek(0)
-      img = Image.open(pdf_bytes)
-      t_fileName = now.strftime("%H%M%S") + ".jpg"
-      img.save(t_fileName, 'JPG')
-      pdf_bytes.flush()
-      st.write(t_fileName)
+      img = convert_from_bytes(pdf_bytes)
+      st.image(img)
+      # t_fileName = now.strftime("%H%M%S") + ".jpg"
+      # img.save(t_fileName, 'JPG')
+      # pdf_bytes.flush()
+      #st.write(t_fileName)
 
