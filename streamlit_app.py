@@ -12,6 +12,7 @@ import easyocr
 st.write("Welcome!")
 
 m_cont = st.container()
+c1, c2 = st.columns(2)
 now = datetime.now()
 reader = easyocr.Reader(['en'])
 
@@ -22,10 +23,11 @@ if (t_file != None):
    # t_contents = PdfReader(t_file)
    img = fitz.open(stream=t_file.getvalue(), filetype="pdf")
    # num_pages = len(t_contents.pages)
-   for page in img:
-      pic = page.get_pixmap()
-      st.image(pic.pil_tobytes(format="JPEG"))
-      with m_cont:
-         st.write(reader.readtext(pic.pil_tobytes(format="JPEG")))
+   with c1:
+      for page in img:
+         pic = page.get_pixmap()
+         st.image(pic.pil_tobytes(format="JPEG"))
+         with c2:
+            st.write(reader.readtext(pic.pil_tobytes(format="JPEG")))
 
 
