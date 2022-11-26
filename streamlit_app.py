@@ -21,7 +21,7 @@ if (t_file != None):
    img = fitz.open(stream=t_file.getvalue(), filetype="pdf")
    # num_pages = len(t_contents.pages)
    for page in img:
-      pic = page.getPixmap()
-      st.image(pic.getImageData("PNG"), output_format='PNG')
+      pic = page.get_pixmap()
+      st.image(pic.pillowData("PNG"), output_format='PNG')
 
 
