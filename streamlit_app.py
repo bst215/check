@@ -18,7 +18,7 @@ t_file = st.sidebar.file_uploader("Pick a PDF File")
 if (t_file != None):
    dst_pdf = PdfWriter()
    # t_contents = PdfReader(t_file)
-   img = fitz.open(t_file.name)
+   img = fitz.open(stream=t_file.getvalue(), filetype="pdf")
    # num_pages = len(t_contents.pages)
    for page in img:
       pic = page.get_pixmap(matrix=mat)
