@@ -3,3 +3,4 @@ snowflake-snowpark-python[pandas]
 opencv-python
 PyPDF2
 pillow
+libgl1
