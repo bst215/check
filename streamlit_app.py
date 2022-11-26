@@ -35,5 +35,5 @@ if (t_file != None):
       t_fileName = now.strftime("%H%M%S") + ".jpg"
       img.save(t_fileName, 'JPG')
       pdf_bytes.flush()
-      st.image(t_fileName)
+      st.write(t_fileName)
 
