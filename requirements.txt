@@ -3,4 +3,5 @@ snowflake-snowpark-python[pandas]
 opencv-python-headless
 PyPDF2
 pillow
+poppler-utils
 pdf2image
