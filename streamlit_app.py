@@ -20,3 +20,4 @@ if (t_file != None):
             curr_page_content = t_contents.pages[i]
             curr_page_txt = curr_page_content.extract_text()
             st.write(curr_page_txt)
+      st.write(t_contents.pages)
