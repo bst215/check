@@ -11,5 +11,9 @@ t_file = st.sidebar.file_uploader("Pick a PDF File")
 if (t_file != None):
    t_contents = PdfReader(t_file)
    num_pages = len(t_contents.pages)
-   with m_cont:
-      st.write("Number of pages in the .PDF: " + str(num_pages))
+   if (num_pages > 0):
+      page_one = t_contents.pages[0]
+      page_one_text = page_one.extract_text()
+         with m_cont:
+            st.write("Number of pages in the .PDF: " + str(num_pages))
+            st.write(page_one_text)
