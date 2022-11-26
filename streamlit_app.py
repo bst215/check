@@ -32,7 +32,8 @@ if (t_file != None):
       dst_pdf.write(pdf_bytes)
       pdf_bytes.seek(0)
       img = Image.open(pdf_bytes)
-      st.image(img)
-      # t_fileName = now.strftime("%H%M%S") + ".jpg"
-      # img.save(t_fileName, 'JPG')
-      # pdf_bytes.flush()
+      t_fileName = now.strftime("%H%M%S") + ".jpg"
+      img.save(t_fileName, 'JPG')
+      pdf_bytes.flush()
+      st.image(t_fileName)
+
