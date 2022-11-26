@@ -7,11 +7,13 @@ from pdf2image import convert_from_bytes, convert_from_path
 import io
 import os
 import fitz
+import easyocr
 
 st.write("Welcome!")
 
 m_cont = st.container()
 now = datetime.now()
+reader = easyocr.Reader(['en'])
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
@@ -23,5 +25,6 @@ if (t_file != None):
    for page in img:
       pic = page.get_pixmap()
       st.image(pic.pil_tobytes(format="JPEG"))
+      reader.readtext(pic.pil_tobytes(format="JPEG"))
 
 
