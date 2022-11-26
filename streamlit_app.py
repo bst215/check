@@ -14,6 +14,6 @@ if (t_file != None):
    if (num_pages > 0):
       page_one = t_contents.pages[0]
       page_one_text = page_one.extract_text()
-         with m_cont:
-            st.write("Number of pages in the .PDF: " + str(num_pages))
-            st.write(page_one_text)
+      with m_cont:
+         st.write("Number of pages in the .PDF: " + str(num_pages))
+         st.write(page_one_text)
