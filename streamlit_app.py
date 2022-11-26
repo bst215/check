@@ -17,7 +17,7 @@ t_file = st.sidebar.file_uploader("Pick a PDF File")
 if (t_file != None):
    dst_pdf = PdfWriter()
    # t_contents = PdfReader(t_file)
-   img = convert_from_path(t_file)
+   img = convert_from_path(t_file.getvalue())
    # num_pages = len(t_contents.pages)
    num_pages = len(img)
    if (num_pages > 0):
