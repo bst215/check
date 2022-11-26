@@ -22,6 +22,6 @@ if (t_file != None):
    # num_pages = len(t_contents.pages)
    for page in img:
       pic = page.get_pixmap()
-      st.image(pic)
+      st.image(pic, output_format='PNG')
 
 
