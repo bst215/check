@@ -31,8 +31,8 @@ if (t_file != None):
       pdf_bytes = io.BytesIO()
       dst_pdf.write(pdf_bytes)
       pdf_bytes.seek(0)
-      st.image(pdf_bytes)
-      # img = Image.open(pdf_bytes)
+      img = Image.open(pdf_bytes)
+      st.image(img)
       # t_fileName = now.strftime("%H%M%S") + ".jpg"
       # img.save(t_fileName, 'JPG')
       # pdf_bytes.flush()
