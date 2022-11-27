@@ -26,7 +26,7 @@ def page_to_image(t_page, show_bb):
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
     for t in range(len(t_read)):
         # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
-        // m_dict.update({g: t_read[t][1]})
+        # m_dict.update({g: t_read[t][1]})
         g+=1
     return pic
 
