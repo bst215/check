@@ -26,7 +26,7 @@ def page_to_image(t_page, show_bb):
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
         for t in range(len(t_read)):
             # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
-            # m_dict.update({g: t_read[t][1]})
+            m_dict.update({g: t_read[t][1]})
             g+=1
         return pic
 
@@ -38,7 +38,8 @@ if (t_file != None):
    # num_pages = len(t_contents.pages)
    with c1:
       for page in img:
-         c_pages.append(page_to_image(page, False))
+        v = page_to_image(page, False)
+        c_pages.append(v)
    with c2:
      st.write(m_dict)
      for i in range(len(c_pages)):
