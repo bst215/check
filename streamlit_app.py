@@ -16,6 +16,7 @@ c1, c2 = st.columns(2)
 now = datetime.now()
 reader = easyocr.Reader(['en'])
 t = 0
+m_dict = {}
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
