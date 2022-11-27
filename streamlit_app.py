@@ -29,7 +29,8 @@ if (t_file != None):
          pic = page.get_pixmap()
          st.image(pic.pil_tobytes(format="JPEG"))
          with c2:
-            st.write(reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1])
+            m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
+            st.write(m_dict)
             t+=1
 
 
