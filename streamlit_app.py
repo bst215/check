@@ -40,7 +40,7 @@ if (t_file != None):
       for page in img:
         pic = page.get_pixmap()
         v = page_to_image(pic)
-        c_pages.append(v)
+        # c_pages.append(v)
    with c2:
      if (len(c_pages) > 0):
         st.write(m_dict)
