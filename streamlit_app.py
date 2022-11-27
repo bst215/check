@@ -3,7 +3,6 @@ import cv2
 from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from datetime import datetime
-from pdf2image import convert_from_bytes, convert_from_path
 import io
 import os
 import fitz
@@ -17,6 +16,17 @@ now = datetime.now()
 reader = easyocr.Reader(['en'])
 g = 0
 m_dict = {}
+c_pages = []
+
+def page_to_image(t_page, show_bb):
+    pic = t_page.get_pixmap()
+    # st.image(pic.pil_tobytes(format="JPEG"))
+    t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
+    for t in range(len(t_read)):
+        # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
+        m_dict.update({g: t_read[t][1]})
+        g+=1
+    return t_page
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
@@ -27,15 +37,10 @@ if (t_file != None):
    # num_pages = len(t_contents.pages)
    with c1:
       for page in img:
-         pic = page.get_pixmap()
-         st.image(pic.pil_tobytes(format="JPEG"))
-         with c2:
-            t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
-            for t in range(len(t_read)):
-               # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
-               m_dict.update({g: t_read[t][1]})
-               g+=1
+         c_pages.append(page_to_image(page, False))
       with c2:
         st.write(m_dict)
+      for i in range(len(c_pages)):
+         st.image(c_pages[i])
 
 
