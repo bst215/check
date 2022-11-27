@@ -31,7 +31,7 @@ if (t_file != None):
          st.image(pic.pil_tobytes(format="JPEG"))
       with c2:
          t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
-         for t in range(len(t_read))
+         for t in range(len(t_read)):
             # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
             st.write(t_read[t][1]))
             # t+=1
