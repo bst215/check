@@ -38,9 +38,9 @@ if (t_file != None):
    with c1:
       for page in img:
          c_pages.append(page_to_image(page, False))
-      with c2:
-        st.write(m_dict)
-      for i in range(len(c_pages)):
-         st.image(c_pages[i])
+   with c2:
+     st.write(m_dict)
+     for i in range(len(c_pages)):
+        st.image(c_pages[i])
 
 
