@@ -19,7 +19,7 @@ c_pages = []
 pic = None
 t_read = None
 
-def page_to_image(pic, show_bb):
+def page_to_image(pic, show_bb = False):
     # st.image(pic.pil_tobytes(format="JPEG"))
     if (show_bb == False):
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
@@ -38,7 +38,7 @@ if (t_file != None):
    with c1:
       for page in img:
         pic = page.get_pixmap()
-        v = page_to_image(pic, False)
+        v = page_to_image(pic)
         c_pages.append(v)
    with c2:
      st.write(m_dict)
