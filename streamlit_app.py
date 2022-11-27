@@ -48,7 +48,7 @@ if (t_file != None):
         c_df.append(m_df)
    with c2:
      if (len(c_pages) > 0):
-        for j in range(len(c_df)):
+        for j in range(len(c_df)-1):
             st.table(c_df[j])
         st.table(m_df)
         with c1:
