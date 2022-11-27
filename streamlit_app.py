@@ -17,6 +17,7 @@ reader = easyocr.Reader(['en'])
 g = 0
 t = 0
 m_dict = {}
+m_df = pd.DataFrame(columns=['bbox', 'text', 'confidence'])
 c_pages = []
 pic = None
 t_read = None
@@ -43,7 +44,8 @@ if (t_file != None):
         c_pages.append(pic.pil_tobytes(format="JPEG"))
    with c2:
      if (len(c_pages) > 0):
-        st.write(m_dict)
+        m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
+        st.table(m_df)
         with c1:
             for i in range(len(c_pages)):
                 st.image(c_pages[i])
