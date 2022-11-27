@@ -40,7 +40,7 @@ if (t_file != None):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
            g+=1
-        np.append(c_pages, pic.pil_tobytes(format="JPEG"), axis = 0)
+        np.append(c_pages, pic.pil_tobytes(format="JPEG"), axis = 1)
    with c2:
      if (len(c_pages) > 0):
         st.write(m_dict)
