@@ -20,15 +20,13 @@ c_pages = []
 pic = None
 t_read = None
 
-def page_to_image(pic, show_bb = False):
+def page_to_image(t_read, show_bb = False):
     # st.image(pic.pil_tobytes(format="JPEG"))
     if (show_bb == False):
-        t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
         for t in range(len(t_read)):
             # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
             m_dict.update({g: t_read[t][1]})
             g+=1
-        return pic
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
@@ -39,8 +37,9 @@ if (t_file != None):
    with c1:
       for page in img:
         pic = page.get_pixmap()
-        # v = page_to_image(pic)
-        # c_pages.append(v)
+        t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
+        page_to_image(t_read)
+        c_pages.append(pic)
    with c2:
      if (len(c_pages) > 0):
         st.write(m_dict)
