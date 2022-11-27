@@ -35,7 +35,7 @@ if (t_file != None):
                # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
                m_dict.update({g: t_read[g][1]})
                g+=1
-       with c2:
-         st.write(m_dict)
+      with c2:
+        st.write(m_dict)
 
 
