@@ -1,6 +1,5 @@
 import streamlit as st
 import cv2
-from PyPDF2 import PdfReader, PdfWriter
 from PIL import Image
 from datetime import datetime
 import io
@@ -33,7 +32,6 @@ def page_to_image(t_page, show_bb):
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
 if (t_file != None):
-   dst_pdf = PdfWriter()
    # t_contents = PdfReader(t_file)
    img = fitz.open(stream=t_file.getvalue(), filetype="pdf")
    # num_pages = len(t_contents.pages)
