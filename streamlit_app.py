@@ -15,7 +15,7 @@ m_cont = st.container()
 c1, c2 = st.columns(2)
 now = datetime.now()
 reader = easyocr.Reader(['en'])
-t = 0
+g = 0
 m_dict = {}
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
@@ -33,7 +33,9 @@ if (t_file != None):
             t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
             for t in range(len(t_read)):
                # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
-               st.write(t_read[t][1])
-               # t+=1
+               m_dict.update({g: t_read[g][1]})
+               g+=1
+       with c2:
+         st.write(m_dict)
 
 
