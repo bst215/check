@@ -17,6 +17,7 @@ reader = easyocr.Reader(['en'])
 g = 0
 m_dict = {}
 c_pages = []
+pic = None
 
 def page_to_image(t_page, show_bb):
     pic = t_page.get_pixmap()
