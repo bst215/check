@@ -17,7 +17,7 @@ reader = easyocr.Reader(['en'])
 g = 0
 t = 0
 m_dict = {}
-c_pages = np.array()
+c_pages = np.array([])
 pic = None
 t_read = None
 
