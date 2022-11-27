@@ -20,9 +20,9 @@ c_pages = []
 pic = None
 t_read = None
 
-def page_to_image(t_read, show_bb = False):
+#def page_to_image(t_read, show_bb = False):
     # st.image(pic.pil_tobytes(format="JPEG"))
-    if (show_bb == False):
+#    if (show_bb == False):
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
