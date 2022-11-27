@@ -6,7 +6,7 @@ import io
 import os
 import fitz
 import easyocr
-import numpy
+import numpy as np
 
 st.write("Welcome!")
 
