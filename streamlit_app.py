@@ -7,6 +7,7 @@ import os
 import fitz
 import easyocr
 import numpy as np
+import pandas as pd
 
 st.write("Welcome!")
 
