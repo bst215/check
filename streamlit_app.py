@@ -43,7 +43,8 @@ if (t_file != None):
    with c2:
      if (len(c_pages) > 0):
         st.write(m_dict)
-        for i in range(len(c_pages)):
-            st.image(c_pages[i])
+        with c1:
+            for i in range(len(c_pages)):
+                st.image(c_pages[i])
 
 
