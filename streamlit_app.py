@@ -27,7 +27,7 @@ def page_to_image(t_page, show_bb):
         # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
         m_dict.update({g: t_read[t][1]})
         g+=1
-    return t_page
+    return pic
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
