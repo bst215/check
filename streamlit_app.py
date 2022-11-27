@@ -20,6 +20,7 @@ t = 0
 m_dict = {}
 m_df = pd.DataFrame(columns=['bbox', 'text', 'confidence'])
 c_pages = []
+c_df = []
 pic = None
 t_read = None
 
@@ -42,10 +43,13 @@ if (t_file != None):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
            g+=1
+        m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
         c_pages.append(pic.pil_tobytes(format="JPEG"))
+        c_df.append(m_df)
    with c2:
      if (len(c_pages) > 0):
-        m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
+        for j in range(len(c_df)):
+            st.table(c_df[j])
         st.table(m_df)
         with c1:
             for i in range(len(c_pages)):
