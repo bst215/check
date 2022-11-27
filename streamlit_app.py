@@ -23,7 +23,7 @@ def page_to_image(t_page, show_bb):
     # st.image(pic.pil_tobytes(format="JPEG"))
     if (show_bb == False):
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"))
-    for t in range(len(t_read)):
+    for t in range(len(t_read)-1):
         # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
         m_dict.update({g: t_read[t][1]})
         g+=1
