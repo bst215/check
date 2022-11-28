@@ -1,6 +1,6 @@
 import streamlit as st
 import cv2
-from PIL import Image
+from PIL import Image, ImageDraw as D
 from datetime import datetime
 import io
 import os
@@ -27,7 +27,7 @@ t_read = None
 #def page_to_image(t_read, show_bb = False):
     # st.image(pic.pil_tobytes(format="JPEG"))
 #    if (show_bb == False):
-
+st.set_page_config(layout="wide")
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
 if (t_file != None):
