@@ -47,7 +47,7 @@ if (t_file != None):
            top_left = tuple(t_read[0][0][0])
            bottom_right = tuple(t_read[0][0][2])
            # dp.rectangle([(x0, y0), (x1, y1)], outline = "green")
-           dp.rectangle(top_left, botttom_right, outline = "green")
+           dp.rectangle(top_left, bottom_right, outline = "green")
            # dp.rectangle([(100, 100), (300, 300)], outline = "green")
            g+=1
         m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
