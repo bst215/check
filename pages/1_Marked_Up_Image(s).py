@@ -13,4 +13,34 @@ st.set_page_config(layout="wide")
 st.write("Page Two")
 
 
-st.write(str(len(pic)))
+
+t_file = st.sidebar.file_uploader("Pick a PDF File")
+
+if (t_file != None):
+   # t_contents = PdfReader(t_file)
+   img = fitz.open(stream=t_file.getvalue(), filetype="pdf")
+   # num_pages = len(t_contents.pages)
+   with c1:
+      for page in img:
+        pic = page.get_pixmap()
+        t_read = reader.readtext(pic.pil_tobytes(format="JPEG"), contrast_ths = 2.0)
+        dp = D.ImageDraw(pic)
+        # page_to_image(t_read)
+        for t in range(len(t_read)):
+           # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
+           m_dict.update({g: t_read[t][1]})
+           dp.drawrect(t_read[t][[0],[3]], outline = "green")
+           g+=1
+        m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
+        c_pages.append(pic.pil_tobytes(format="JPEG"))
+        c_df.append(m_df)
+   with c2:
+     if (len(c_pages) > 0):
+        for j in range(len(c_df)-1):
+            st.table(c_df[j])
+        st.table(m_df)
+        with c1:
+            for i in range(len(c_pages)):
+                st.image(c_pages[i])
+
+
