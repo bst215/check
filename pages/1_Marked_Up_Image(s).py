@@ -48,9 +48,11 @@ if (t_file != None):
            y0 = t_read[t][0][1]
            x1 = t_read[t][0][2]
            y1 = t_read[t][0][3]
-           dp.rectangle((x0, y0, x1, y1), outline = "green")
+           # dp.rectangle([(x0, y0), (x1, y1)], outline = "green")
+           dp.rectangle([(100, 100), (300, 300)], outline = "green")
            g+=1
         m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
+        # m_df = pd.DataFrame(t_read)
         c_pages.append(img)
         c_df.append(m_df)
    with c2:
