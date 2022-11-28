@@ -36,7 +36,9 @@ if (t_file != None):
       for page in img:
         pic = page.get_pixmap()
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"), contrast_ths = 2.0)
-        img = Image.open(io.BytesIO(pic.pil_tobytes(format="JPET")))
+        img_io = io.BytesIO(pic.pil_tobytes(format="JPET"))
+        img_io.seek(0)
+        img = Image.open(img_io)
         dp = D.ImageDraw(img)
         # page_to_image(t_read)
         for t in range(len(t_read)):
