@@ -12,6 +12,18 @@ import pandas as pd
 st.set_page_config(layout="wide")
 st.write("Page Two")
 
+m_cont = st.container()
+c1, c2 = st.columns(2)
+now = datetime.now()
+reader = easyocr.Reader(['en'])
+g = 0
+t = 0
+m_dict = {}
+m_df = pd.DataFrame(columns=['bbox', 'text', 'confidence'])
+c_pages = []
+c_df = []
+pic = None
+t_read = None
 
 
 t_file = st.sidebar.file_uploader("Pick a PDF File")
