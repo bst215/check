@@ -44,7 +44,7 @@ if (t_file != None):
         for t in range(len(t_read)):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
-           dp.rectangle(t_read[t][[0]], outline = "green")
+           dp.rectangle(t_read[t][0], outline = "green")
            g+=1
         m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
         c_pages.append(img)
