@@ -36,7 +36,8 @@ if (t_file != None):
       for page in img:
         pic = page.get_pixmap()
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"), contrast_ths = 2.0)
-        dp = D.ImageDraw(pic.pil_tobytes(format="JPEG"))
+        img = Image.open(io.BytesIO(pic.pil_tobytes(format="JPET")))
+        dp = D.ImageDraw(img)
         # page_to_image(t_read)
         for t in range(len(t_read)):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
@@ -44,7 +45,7 @@ if (t_file != None):
            dp.drawrect(t_read[t][[0],[3]], outline = "green")
            g+=1
         m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
-        c_pages.append(pic.pil_tobytes(format="JPEG"))
+        c_pages.append(img)
         c_df.append(m_df)
    with c2:
      if (len(c_pages) > 0):
