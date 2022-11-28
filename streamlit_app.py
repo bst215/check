@@ -9,6 +9,9 @@ import easyocr
 import numpy as np
 import pandas as pd
 
+st.set_page_config(layout="wide")
+st.write("Welcome!")
+
 m_cont = st.container()
 c1, c2 = st.columns(2)
 now = datetime.now()
@@ -25,8 +28,7 @@ t_read = None
 #def page_to_image(t_read, show_bb = False):
     # st.image(pic.pil_tobytes(format="JPEG"))
 #    if (show_bb == False):
-st.set_page_config(layout="wide")
-st.write("Welcome!")
+
 t_file = st.sidebar.file_uploader("Pick a PDF File")
 
 if (t_file != None):
