@@ -44,12 +44,10 @@ if (t_file != None):
         for t in range(len(t_read)):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
-           x0 = t_read[t][[0][0]][0:0]
-           y0 = t_read[t][[0][0]][1:1]
-           x1 = t_read[t][[0][0]][2:2]
-           y1 = t_read[t][[0][0]][3:3]
+           top_left = tuple(t_read[0][0][0])
+           bottom_right = tuple(t_read[0][0][2])
            # dp.rectangle([(x0, y0), (x1, y1)], outline = "green")
-           dp.rectangle([(x0, y0), (x1, y1)], outline = "green")
+           dp.rectangle([top_left, (botttom_right)], outline = "green")
            # dp.rectangle([(100, 100), (300, 300)], outline = "green")
            g+=1
         m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
