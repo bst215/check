@@ -14,5 +14,5 @@ st.write("Page Two")
 
 
 
-    for i in range(len(c_pages)):
-        st.image(c_pages[i])
+for i in range(len(c_pages)):
+st.image(c_pages[i])
