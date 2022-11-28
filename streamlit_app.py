@@ -44,9 +44,9 @@ if (t_file != None):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
            g+=1
-#        m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
-         m_df = pd.DataFrame(t_read[t][0][[0][0]])
-       c_pages.append(pic.pil_tobytes(format="JPEG"))
+        #m_df = pd.DataFrame(t_read, columns=['bbox', 'text', 'confidence'])
+        m_df = pd.DataFrame(t_read[t][0][[0][0]])
+        c_pages.append(pic.pil_tobytes(format="JPEG"))
         c_df.append(m_df)
    with c2:
      if (len(c_pages) > 0):
