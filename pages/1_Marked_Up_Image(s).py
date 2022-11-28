@@ -36,7 +36,7 @@ if (t_file != None):
       for page in img:
         pic = page.get_pixmap()
         t_read = reader.readtext(pic.pil_tobytes(format="JPEG"), contrast_ths = 2.0)
-        dp = D.ImageDraw(pic)
+        dp = D.ImageDraw(pic.pil_tobytes(format="JPEG"))
         # page_to_image(t_read)
         for t in range(len(t_read)):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
