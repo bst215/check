@@ -45,7 +45,7 @@ if (t_file != None):
            # m_dict.update({t: reader.readtext(pic.pil_tobytes(format="JPEG"))[t][1]})
            m_dict.update({g: t_read[t][1]})
            x0 = t_read[t][0][[0][0]]
-           y0 = t_read[t][0][[0][1]]
+           y0 = t_read[t][0][[1][0]]
            x1 = t_read[t][0][[1][0]]
            y1 = t_read[t][0][[1][1]]
            # dp.rectangle([(x0, y0), (x1, y1)], outline = "green")
